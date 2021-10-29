@@ -1,0 +1,125 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+/* .sky{
+  height: 40%;
+  background: skyblue;
+} */
+
+.arena{
+  background-image: url(./img/arena.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  height: 100%;
+  width:100%
+}
+
+/* .road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+} */
+
+
+
+/*// ELEMENTS TO ANIMATE //*/
+
+.ichigo {
+  position: absolute;
+  top: -150px;
+  left: 0px;
+  width: 300px;
+  height: 100px;
+  animation-direction: alternate;
+  /* Call the keyframe */
+  animation-name: fight;
+  /* Specify how long you want the animation to last for */
+  animation-duration: 3s;
+  /* It takes the last keyframe element (to) and applies it to the image */
+  animation-fill-mode: both;
+  
+  /* It takes the first keyframe element (from) and applies it to the image */
+  /* animation-fill-mode: backwards; */
+  
+  /* It takes the first keyframe element (from) and applies it to the image */
+  /* animation-fill-mode: both; */
+  
+  /* Delays the animation */
+  /* animation-delay: 2s; */
+
+  /* Determines how many times you want the animation to repeat */
+  animation-iteration-count: infinite;
+
+  /* Determines the speed of the animation */
+  animation-timing-function: ease;
+
+  /* can creating your own timing option */
+  /* Here you can create your own speed and different intervals of the animation: https://cubic-bezier.com/ */
+  /* animation-timing-function: cubic-bezier(1, 0, 0, 1); */
+}
+
+.luffy {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  animation-name: fight2;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  width: 300px;
+  height: 100px;
+  
+  /* Can choose the direction of the animation */
+  animation-direction: alternate;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 180px;
+  opacity: 0.5;
+  /* Short hand, the first item has to be animation and second item has to be duration, the rest of the order does not matter */
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top:0;
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 60s linear infinite reverse;
+}
+
+/*// KEYFRAMES //*/
+
+/* Image will move from the right to the left */
+@keyframes fight {
+  from { transform: translateX(1px);} /* Starting point */
+  to { transform: translateX(470px);} /* Ending point */
+}
+@keyframes fight2 {
+  from { transform: translateX(1000px);} /* Starting point */
+  to { transform: translateX(500px);} /* Ending point */
+}
+
+@keyframes wind {
+  from { left: -300px }
+  to { left: 100% }
+}
